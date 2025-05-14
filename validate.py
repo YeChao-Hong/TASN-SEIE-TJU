@@ -71,7 +71,7 @@ if __name__ == "__main__":
     parser.add_argument("--data_label", type=str, default="val")
     parser.add_argument("--arch", type=str, default="CLIP:ViT-L/14")
     # parser.add_argument("--ckpt", type=str, default="/tmp/pycharm_project_76/checkpoints/model_epoch_0.pth")
-    parser.add_argument("--ckpt", type=str, default="/root/autodl-tmp/checkpoints/experiment_name/test1_model_bacth_1536.pth")
+    parser.add_argument("--ckpt", type=str, default="/root/autodl-tmp/checkpoints/experiment_name/rnn_lip_model_epoch_6.pth")
     parser.add_argument("--gpu", type=int, default=0)
 
     opt = parser.parse_args()

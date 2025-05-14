@@ -1,0 +1,23 @@
+----------------- Options ---------------
+                     arch: CLIP:ViT-L/14                 
+               batch_size: 6                             
+                 blur_sig:                               
+          checkpoints_dir: ./checkpoints                 
+                class_bal: False                         
+                  classes:                               
+               data_label: train                         
+           fake_list_path: ./datasets/AVLips/1_fake      
+             fix_backbone: False                         
+              fix_encoder: True                          
+                  gpu_ids: 0                             
+                  isTrain: False                         	[default: None]
+               jpg_method:                               
+                 jpg_qual:                               
+                     name: experiment_name               
+              num_threads: 0                             
+           real_list_path: ./datasets/AVLips/0_real      
+                rz_interp:                               
+           serial_batches: False                         
+                   suffix:                               
+             weight_decay: 0.0001                        
+----------------- End -------------------

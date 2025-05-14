@@ -14,8 +14,8 @@ class BaseOptions:
         parser.add_argument("--fix_encoder", default=True)
         # parser.add_argument("--real_list_path", default="./datasets/AVLips/0_real")  #注意这个是val路径，训练要改
         # parser.add_argument("--fake_list_path", default="./datasets/AVLips/1_fake")  #注意这个是val路径，训练要改
-        parser.add_argument("--real_list_path", default="/root/autodl-tmp/AVLips_036/0_real")
-        parser.add_argument("--fake_list_path", default="/root/autodl-tmp/AVLips_036/1_fake")
+        parser.add_argument("--real_list_path", default="/root/autodl-tmp/val_036/0_real")
+        parser.add_argument("--fake_list_path", default="/root/autodl-tmp/val_036/1_fake")
         parser.add_argument("--data_label", default="train", help="label to decide whether train or validation dataset")
         parser.add_argument("--batch_size", type=int, default=5, help="input batch size")
         parser.add_argument("--gpu_ids", type=str, default="0", help="gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU")

@@ -340,7 +340,7 @@ class ResNet(nn.Module):
         # f.shape: (batch_size, 3, 224, 224), feature.shape: (batch_size, 768)
         features, weights, parts, weights_org, weights_max = [list() for i in range(5)]
         lip_features = []
-        for i in range(0, len(x[2])):
+        for i in range(1, len(x[2])):
             f = x[2][i]-x[2][i-1]
             f = self.lip_conv1(f)
             f = self.lip_bn1(f)
