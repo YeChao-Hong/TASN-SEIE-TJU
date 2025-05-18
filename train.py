@@ -57,12 +57,12 @@ if __name__ == "__main__":
             progress_bar.set_postfix({"Loss": avg_loss})
 
             # if epoch % opt.save_epoch_freq == 0 and i % opt.save_batch_freq == 0 and i!=0:
-            #     print("saving the model at the end of batch %d" % (i+epoch*2732))
-            #     model.save_networks("test1_model_bacth_%s.pth" % (i+epoch*2732))
+            #     print("saving the model at the end of batch %d" % (i+epoch*2953))
+            #     model.save_networks("test1_model_bacth_%s.pth" % (i+epoch*2953))
 
         if epoch % opt.save_epoch_freq == 0:
             print("saving the model at the end of epoch %d" % (epoch + model.step_bias))
-            model.save_networks("rnn_lip_model_epoch_%s.pth" % (epoch + model.step_bias))
+            model.save_networks("final_lip_model_epoch_%s.pth" % (epoch + model.step_bias))
 
         model.eval()
         ap, fpr, fnr, acc = validate(model.model, val_loader, opt.gpu_ids)
