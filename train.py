@@ -62,7 +62,7 @@ if __name__ == "__main__":
 
         if epoch % opt.save_epoch_freq == 0:
             print("saving the model at the end of epoch %d" % (epoch + model.step_bias))
-            model.save_networks("final_lip_model_epoch_%s.pth" % (epoch + model.step_bias))
+            model.save_networks("ff_lip_model_epoch_%s.pth" % (epoch + model.step_bias))
 
         model.eval()
         ap, fpr, fnr, acc = validate(model.model, val_loader, opt.gpu_ids)

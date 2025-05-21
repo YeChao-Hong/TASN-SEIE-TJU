@@ -42,8 +42,8 @@ class LipCNN(nn.Module):
             nn.AdaptiveAvgPool2d((4, 4)),
             nn.Flatten(),
             nn.Linear(128 * 4 * 4, 512),
-            nn.LayerNorm(512),
-            nn.Dropout(0.3)
+            # nn.LayerNorm(512),
+            # nn.Dropout(0.3)
         )
 
         # 修正后的方向网络
@@ -58,7 +58,7 @@ class LipCNN(nn.Module):
             nn.Flatten()
         )
 
-
+        # 修正后的全连接层
         self.fc = nn.Sequential(
             nn.Linear(512 + 32*4*4, 512),
             nn.ReLU(),
@@ -66,14 +66,15 @@ class LipCNN(nn.Module):
             nn.LayerNorm(256),
             nn.Linear(256, output_dim)  # 最终输出128维
         )
-
+        self.norm1=nn.LayerNorm(512)
+        self.norm2=nn.LayerNorm(512)
     def forward(self, diff_frame):
         # 主特征路径
         motion_feat = self.motion_net(diff_frame)
-
+        motion_feat = self.norm1(motion_feat)
         # 方向特征路径
         direction_feat = self.direction_net(diff_frame)
-
+        direction_feat = self.norm2(direction_feat)
         # 特征融合
         combined = torch.cat([motion_feat, direction_feat], dim=1)
         return self.fc(combined)

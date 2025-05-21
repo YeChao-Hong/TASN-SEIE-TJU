@@ -82,7 +82,7 @@ class AVLip(Dataset):
                 top = y + int(0.5 * h)
                 mw = mrx - mlx
                 mh = y + h - top
-                mside = max(mw, mh)
+                mside = int(1.1*max(mw, mh))
                 mcx = mlx + mw // 2
                 mcy = top + mh // 2
 
@@ -121,3 +121,4 @@ class AVLip(Dataset):
         img = normalize(img)
         label = torch.tensor(label, dtype=torch.float32)
         return img, crops, label
+
