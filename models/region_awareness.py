@@ -144,7 +144,7 @@ class BasicBlock(nn.Module):
             norm_layer = nn.BatchNorm2d
         if groups != 1 or base_width != 64:
             raise ValueError('BasicBlock only supports groups=1 and base_width=64')
-        if dilation > 1:     #膨胀卷积参数？
+        if dilation > 1:     #膨胀卷积参数
             raise NotImplementedError("Dilation > 1 not supported in BasicBlock")
         # Both self.conv1 and self.downsample layers downsample the input when stride != 1
         self.conv1 = conv3x3(inplanes, planes, stride)
